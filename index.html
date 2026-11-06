@@ -440,6 +440,358 @@
             <p>&copy; 2026 Savory Delights Catering. All Rights Reserved.</p>
         </div>
     </footer>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cost Estimator</title>
+    <style>
+        :root {
+            --bg-main: #1f0a0d;
+            --bg-card: #351519;
+            --bg-result: #2d1014;
+            --accent-gold: #f5a623;
+            --text-light: #f5f5f5;
+            --text-muted: #b8a5a7;
+            --border-color: #4a1f25;
+            --input-bg: #2d1014;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .estimator-container {
+            max-width: 950px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 45px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 45px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            text-align: left;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .field-group {
+            margin-bottom: 30px;
+        }
+
+        .label-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .guest-count-display {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Custom Range Slider */
+        .slider-container {
+            position: relative;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #4a2328;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(245, 166, 35, 0.5);
+            transition: transform 0.1s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+
+        .slider-ticks {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+
+        /* Select Dropdown */
+        select {
+            width: 100%;
+            background-color: var(--input-bg);
+            color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+            background-size: 16px;
+        }
+
+        select:focus {
+            border-color: var(--accent-gold);
+        }
+
+        /* Checkboxes */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #ffffff;
+            user-select: none;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent-gold);
+            cursor: pointer;
+        }
+
+        /* Result Panel */
+        .result-panel {
+            background-color: var(--bg-result);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .result-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .total-price {
+            font-family: Georgia, serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 25px;
+            max-width: 260px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent-gold);
+            color: #1f0a0d;
+            border: none;
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #e0951a;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 800px) {
+            .card {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="estimator-container">
+        <div class="tag">Instant Quote Tool</div>
+        <h1>Interactive Cost Estimator</h1>
+        <p class="subtitle">Adjust your guest count and package to generate an estimated catering quote instantly.</p>
+
+        <div class="card">
+            <!-- Form Side -->
+            <div class="form-side">
+                <div class="field-group">
+                    <label class="label-title">
+                        Estimated Guest Count: <span id="guestCountText" class="guest-count-display">130 Guests</span>
+                    </label>
+                    <div class="slider-container">
+                        <input type="range" id="guestSlider" min="10" max="300" value="130" step="5">
+                    </div>
+                    <div class="slider-ticks">
+                        <span>10 Guests</span>
+                        <span>150 Guests</span>
+                        <span>300+ Guests</span>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label class="label-title">Package Style</label>
+                    <select id="packageSelect">
+                        <option value="28">Standard Buffet ($28 / guest)</option>
+                        <option value="38" selected>Silver Buffet ($38 / guest)</option>
+                        <option value="48">Gold Plated Service ($48 / guest)</option>
+                        <option value="65">Platinum VIP Dining ($65 / guest)</option>
+                    </select>
+                </div>
+
+                <div class="field-group">
+                    <label class="label-title">Add-On Services</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="barService" value="15">
+                            Open Bar Service (+$15 / guest)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="dessertStation" value="8">
+                            Artisanal Dessert Station (+$8 / guest)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Panel -->
+            <div class="result-panel">
+                <div class="result-title">Estimated Investment</div>
+                <div class="total-price" id="totalPriceDisplay">$4,940</div>
+                <div class="note">*Includes preliminary setup, service staff & food preparation.</div>
+                <button class="btn-submit" onclick="alert('Estimate confirmed!')">Lock In Estimate & Request Date</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const guestSlider = document.getElementById('guestSlider');
+        const guestCountText = document.getElementById('guestCountText');
+        const packageSelect = document.getElementById('packageSelect');
+        const barService = document.getElementById('barService');
+        const dessertStation = document.getElementById('dessertStation');
+        const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+
+        function updateSliderBackground() {
+            const min = guestSlider.min;
+            const max = guestSlider.max;
+            const val = guestSlider.value;
+            const percentage = ((val - min) / (max - min)) * 100;
+            guestSlider.style.background = `linear-gradient(to right, var(--accent-gold) 0%, var(--accent-gold) ${percentage}%, #4a2328 ${percentage}%, #4a2328 100%)`;
+        }
+
+        function calculateCost() {
+            const guests = parseInt(guestSlider.value, 10);
+            const packagePrice = parseFloat(packageSelect.value);
+            
+            let perGuestAddOns = 0;
+            if (barService.checked) perGuestAddOns += parseFloat(barService.value);
+            if (dessertStation.checked) perGuestAddOns += parseFloat(dessertStation.value);
+
+            const costPerGuest = packagePrice + perGuestAddOns;
+            const total = guests * costPerGuest;
+
+            guestCountText.textContent = `${guests} Guests`;
+            totalPriceDisplay.textContent = `$${total.toLocaleString('en-US')}`;
+
+            updateSliderBackground();
+        }
+
+        guestSlider.addEventListener('input', calculateCost);
+        packageSelect.addEventListener('change', calculateCost);
+        barService.addEventListener('change', calculateCost);
+        dessertStation.addEventListener('change', calculateCost);
+
+        calculateCost();
+    </script>
 </body>
-</html>
+</html
+
+    
