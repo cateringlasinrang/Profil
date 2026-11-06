@@ -42,6 +42,7 @@
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        atsanee: ['"Atsanee"', 'sans-serif'],
                     }
                 }
             }
@@ -49,19 +50,13 @@
     </script>
     <style>
         /* Mendaftarkan font .otf lokal Anda */
-    @font-face {
-        font-family: 'Atsanee';
-        src: url('AtsaneeDEMO.otf') format('opentype');
-        font-weight: normal;
-        font-style: normal;
-    }
+        @font-face {
+            font-family: 'Atsanee';
+            src: url('AtsaneeDEMO.otf') format('opentype'), url('atsanee.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-    /* Menggunakan font pada teks logo */
-    .logo-atsanee {
-        font-family: 'Atsanee', sans-serif;
-        font-size: 1.5rem;
-        color: #ffffff; /* Ubah warna sesuai keinginan */
-        letter-spacing: 1px;
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #FAF7F2;
@@ -69,6 +64,9 @@
         }
         .font-serif {
             font-family: 'Playfair Display', serif;
+        }
+        .font-atsanee {
+            font-family: 'Atsanee', sans-serif;
         }
         .hero-overlay {
             background: linear-gradient(180deg, rgba(20, 15, 12, 0.82) 0%, rgba(20, 15, 12, 0.65) 50%, rgba(20, 15, 12, 0.9) 100%);
@@ -94,17 +92,15 @@
     <!-- NAVIGATION HEADER -->
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-amber-900/10 transition-all duration-300" id="main-header">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-<a href="#" class="logo-brand" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-    <!-- Logo Kotak Sempurna -->
-    <img src="logo.png" alt="Catering Lasinrang" style="height: 45px; width: 45px; object-fit: cover; border-radius: 0;">
-    
-    <!-- Teks Tampilan -->
-    <div style="display: flex; flex-direction: column; line-height: 1.1;">
-        <span style="font-family: 'Impact', 'Atsanee', sans-serif; font-size: 1rem; font-weight: bold; color: #1a1a1a; letter-spacing: 0.5px;">CATERING</span>
-        <span style="font-family: 'Impact', 'Atsanee', sans-serif; font-size: 1.2rem; font-weight: bold; color: #c82333; letter-spacing: 0.5px;">LASINRANG</span>
-    </div>
-</a>
+            <!-- Brand Logo (Kotak + Font Atsanee) -->
+            <a href="#" class="logo-brand" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="Logo.jpg" alt="Catering Lasinrang" style="height: 45px; width: 45px; object-fit: cover; border-radius: 6px;">
+                <div style="display: flex; flex-direction: column; line-height: 1.1;">
+                    <span class="font-atsanee" style="font-size: 1rem; font-weight: bold; color: #1a1a1a; letter-spacing: 0.5px;">CATERING</span>
+                    <span class="font-atsanee" style="font-size: 1.2rem; font-weight: bold; color: #c82333; letter-spacing: 0.5px;">LASINRANG</span>
+                </div>
+            </a>
+
             <!-- Desktop Nav Links -->
             <div class="hidden lg:flex items-center gap-7 font-medium text-sm text-gray-700">
                 <a href="#home" class="hover:text-amber-600 transition-colors py-2">Home</a>
@@ -151,10 +147,10 @@
                 <i class="fa-solid fa-utensils"></i> Crafting Unforgettable Culinary Journeys
             </span>
             <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight mb-6">
-                Memberikan Pelayanan Catering <span class="italic text-amber-400 font-normal">Terbaik</span> Moments
+                Artisanal Catering For Life's <span class="italic text-amber-400 font-normal">Finest</span> Moments
             </h1>
             <p class="text-base sm:text-xl text-gray-200 max-w-2xl mx-auto font-light leading-relaxed mb-10">
-               Dari bahan baku pilihan dan orang orang terbaik yang telah kami seleksi.
+                From lavish wedding galas to high-impact corporate summits, we transform fresh local ingredients into unforgettable gastronomic celebrations.
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -259,7 +255,7 @@
                     Bespoke Hospitality
                 </span>
                 <h2 class="font-serif text-3xl sm:text-5xl font-bold text-burgundy-900">Tailored Catering Services</h2>
-                <p class="text-gray-600 mt-4 text-base">Whether it’s a romantic vineyard wedding or an executive board dinner, we design menus to suit your event perfectly.</p>
+                <p class="text-gray-600 mt-4 text-base">Whether it's a romantic vineyard wedding or an executive board dinner, we design menus to suit your event perfectly.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -464,218 +460,185 @@
                 <span class="text-amber-700 text-xs font-bold uppercase tracking-widest bg-amber-100/80 px-3.5 py-1.5 rounded-full inline-block mb-3">
                     Transparent Pricing
                 </span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-burgundy-900">Catering Tier Packages</h2>
-                <p class="text-gray-600 mt-4 text-base">Itemized all-inclusive packages designed for gatherings of all scales.</p>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-burgundy-900">Curated Catering Packages</h2>
+                <p class="text-gray-600 mt-4 text-base">Select from our pre-configured dining tiers or contact us for customized event menus.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Silver -->
-                <div class="bg-cream rounded-3xl p-8 border border-gray-200 shadow-lg flex flex-col justify-between hover:border-amber-500 transition-all">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Package 1 -->
+                <div class="bg-cream rounded-3xl p-8 border border-amber-900/10 flex flex-col justify-between transition-all hover:shadow-xl">
                     <div>
-                        <div class="mb-6">
-                            <span class="text-xs uppercase font-bold tracking-widest text-gray-500">Standard Buffet</span>
-                            <h3 class="font-serif text-3xl font-bold text-burgundy-900 mt-1">Silver Buffet</h3>
-                        </div>
-                        <div class="mb-6 flex items-baseline gap-1">
-                            <span class="text-4xl font-serif font-bold text-burgundy-900">$38</span>
-                            <span class="text-sm text-gray-500 font-medium">/ guest</span>
-                        </div>
-                        <ul class="space-y-3.5 text-sm text-gray-700 mb-8 border-t border-gray-200/80 pt-6">
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-600 mr-3"></i> 2 Passed Appetizers</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-600 mr-3"></i> Gourmet Buffet Setup</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-600 mr-3"></i> 2 Main Entrées</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-600 mr-3"></i> Artisan Bread & Salad Bar</li>
-                            <li class="flex items-center text-gray-400"><i class="fa-solid fa-circle-xmark mr-3"></i> Plated Service</li>
+                        <div class="text-amber-700 font-bold text-xs uppercase tracking-widest mb-2">Classic Tier</div>
+                        <h3 class="font-serif text-2xl font-bold text-burgundy-900 mb-4">Silver Buffet</h3>
+                        <div class="text-4xl font-serif font-bold text-burgundy-900 mb-6">$38 <span class="text-base font-sans font-normal text-gray-500">/ guest</span></div>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Choice of 2 Starters / Canapés</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Choice of 3 Gourmet Mains</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> 1 Artisanal Dessert</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Professional Buffet Staff & Setup</li>
                         </ul>
                     </div>
-                    <a href="#book" class="block text-center w-full bg-white hover:bg-burgundy-700 hover:text-white border border-burgundy-700 text-burgundy-700 font-bold py-3.5 rounded-xl transition-all">
-                        Select Silver
-                    </a>
+                    <a href="#calculator" class="w-full bg-burgundy-700 hover:bg-burgundy-800 text-white font-semibold py-3.5 rounded-full text-center transition-all">Select Silver</a>
                 </div>
 
-                <!-- Gold -->
-                <div class="bg-burgundy-900 text-white rounded-3xl p-8 border-2 border-amber-400 shadow-2xl flex flex-col justify-between transform lg:-translate-y-4 relative">
-                    <div class="absolute -top-4 right-8 bg-amber-500 text-burgundy-900 text-xs font-extrabold uppercase px-4 py-1.5 rounded-full shadow-md">
-                        Most Popular
-                    </div>
+                <!-- Package 2 (Featured) -->
+                <div class="bg-burgundy-900 text-white rounded-3xl p-8 border-2 border-amber-500 flex flex-col justify-between shadow-2xl relative transform lg:-translate-y-4">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-burgundy-900 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">Most Popular</span>
                     <div>
-                        <div class="mb-6">
-                            <span class="text-xs uppercase font-bold tracking-widest text-amber-400">Plated Fine Dining</span>
-                            <h3 class="font-serif text-3xl font-bold text-white mt-1">Gold Plated</h3>
-                        </div>
-                        <div class="mb-6 flex items-baseline gap-1">
-                            <span class="text-5xl font-serif font-bold text-amber-400">$65</span>
-                            <span class="text-sm text-gray-300 font-medium">/ guest</span>
-                        </div>
-                        <ul class="space-y-3.5 text-sm text-gray-200 mb-8 border-t border-burgundy-800 pt-6">
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-3"></i> 4 Passed Canapés</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-3"></i> 3-Course Seated Plated Dinner</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-3"></i> Choice of 3 Entrées</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-3"></i> Plated Dessert Pairing</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-3"></i> Full Staff & Table Setup</li>
+                        <div class="text-amber-400 font-bold text-xs uppercase tracking-widest mb-2">Signature Tier</div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-4">Gold Plated Service</h3>
+                        <div class="text-4xl font-serif font-bold text-amber-400 mb-6">$55 <span class="text-base font-sans font-normal text-gray-300">/ guest</span></div>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-200">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> 3-Course Plated Gourmet Dinner</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Premium Wine Pairings</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Dedicated Butler & Waitstaff</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Custom Menu Cards & Place Settings</li>
                         </ul>
                     </div>
-                    <a href="#book" class="block text-center w-full bg-amber-500 hover:bg-amber-600 text-burgundy-900 font-extrabold py-4 rounded-xl transition-all shadow-lg shadow-amber-500/20">
-                        Select Gold
-                    </a>
+                    <a href="#calculator" class="w-full bg-amber-500 hover:bg-amber-600 text-burgundy-900 font-bold py-3.5 rounded-full text-center transition-all shadow-lg">Select Gold</a>
                 </div>
 
-                <!-- Platinum -->
-                <div class="bg-cream rounded-3xl p-8 border border-gray-200 shadow-lg flex flex-col justify-between hover:border-amber-500 transition-all">
+                <!-- Package 3 -->
+                <div class="bg-cream rounded-3xl p-8 border border-amber-900/10 flex flex-col justify-between transition-all hover:shadow-xl">
                     <div>
-                        <div class="mb-6">
-                            <span class="text-xs uppercase font-bold tracking-widest text-gray-500">Ultimate VIP Gala</span>
-                            <h3 class="font-serif text-3xl font-bold text-burgundy-900 mt-1">Platinum VIP</h3>
-                        </div>
-                        <div class="mb-6 flex items-baseline gap-1">
-                            <span class="text-4xl font-serif font-bold text-burgundy-900">$98</span>
-                            <span class="text-sm text-gray-500 font-medium">/ guest</span>
-                        </div>
-                        <ul class="space-y-3.5 text-sm text-gray-700 mb-8 border-t border-gray-200/80 pt-6">
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-600 mr-3"></i> Live Raw Seafood & Grazing Bar</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-600 mr-3"></i> 5-Course Chef Tasting Menu</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-600 mr-3"></i> Sommelier Fine Wine Pairing</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-600 mr-3"></i> Premium Craft Open Bar</li>
-                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-600 mr-3"></i> Executive Floor Management</li>
+                        <div class="text-amber-700 font-bold text-xs uppercase tracking-widest mb-2">Elite Tier</div>
+                        <h3 class="font-serif text-2xl font-bold text-burgundy-900 mb-4">Platinum VIP Dining</h3>
+                        <div class="text-4xl font-serif font-bold text-burgundy-900 mb-6">$85 <span class="text-base font-sans font-normal text-gray-500">/ guest</span></div>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> 5-Course Executive Tasting Menu</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Live Chef Stations & Open Bar</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Full Event Styling & Tableware</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Personal Event Coordinator</li>
                         </ul>
                     </div>
-                    <a href="#book" class="block text-center w-full bg-white hover:bg-burgundy-700 hover:text-white border border-burgundy-700 text-burgundy-700 font-bold py-3.5 rounded-xl transition-all">
-                        Select Platinum
+                    <a href="#calculator" class="w-full bg-burgundy-700 hover:bg-burgundy-800 text-white font-semibold py-3.5 rounded-full text-center transition-all">Select Platinum</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR SECTION -->
+    <section id="calculator" class="py-24 bg-[#1f0a0d] text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block border border-amber-500 text-amber-400 px-5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                Instant Quote Tool
+            </div>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4 text-white">Interactive Cost Estimator</h2>
+            <p class="text-gray-300 text-base mb-12 max-w-2xl mx-auto">Adjust your guest count and package to generate an estimated catering quote instantly.</p>
+
+            <div class="bg-[#351519] border border-[#4a1f25] rounded-3xl p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 text-left shadow-2xl">
+                <!-- Inputs -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Guest Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="text-xs font-bold tracking-wider text-amber-400 uppercase">Estimated Guest Count</label>
+                            <span id="guestCountText" class="text-xl font-bold text-white uppercase">130 Guests</span>
+                        </div>
+                        <input type="range" id="guestSlider" min="10" max="300" value="130" step="5" class="w-full h-2 rounded-lg bg-[#4a2328] accent-amber-500 cursor-pointer">
+                        <div class="flex justify-between text-xs text-gray-400 mt-2">
+                            <span>10 Guests</span>
+                            <span>150 Guests</span>
+                            <span>300+ Guests</span>
+                        </div>
+                    </div>
+
+                    <!-- Package Select -->
+                    <div>
+                        <label class="block text-xs font-bold tracking-wider text-amber-400 uppercase mb-3">Package Style</label>
+                        <select id="packageSelect" class="w-full bg-[#2d1014] text-white border border-[#4a1f25] px-4 py-3.5 rounded-xl outline-none focus:border-amber-500 cursor-pointer">
+                            <option value="28">Standard Buffet ($28 / guest)</option>
+                            <option value="38" selected>Silver Buffet ($38 / guest)</option>
+                            <option value="48">Gold Plated Service ($48 / guest)</option>
+                            <option value="65">Platinum VIP Dining ($65 / guest)</option>
+                        </select>
+                    </div>
+
+                    <!-- Add-ons -->
+                    <div>
+                        <label class="block text-xs font-bold tracking-wider text-amber-400 uppercase mb-3">Add-On Services</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 cursor-pointer text-sm text-gray-200">
+                                <input type="checkbox" id="barService" value="15" class="w-4 h-4 accent-amber-500 rounded">
+                                Open Bar Service (+$15 / guest)
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer text-sm text-gray-200">
+                                <input type="checkbox" id="dessertStation" value="8" class="w-4 h-4 accent-amber-500 rounded">
+                                Artisanal Dessert Station (+$8 / guest)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Box -->
+                <div class="lg:col-span-5 bg-[#2d1014] border border-[#4a1f25] rounded-2xl p-8 flex flex-col items-center justify-center text-center">
+                    <span class="text-xs font-bold tracking-widest text-amber-400 uppercase mb-3">Estimated Investment</span>
+                    <div id="totalPriceDisplay" class="font-serif text-4xl sm:text-5xl font-bold text-amber-400 mb-4">$4,940</div>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-8 max-w-xs">*Includes preliminary setup, service staff & food preparation.</p>
+                    <a href="#book" class="w-full bg-amber-500 hover:bg-amber-600 text-[#1f0a0d] font-bold py-4 rounded-xl text-sm transition-all shadow-lg">
+                        Lock In Estimate & Request Date
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LIVE CALCULATOR SECTION -->
-    <section id="calculator" class="py-20 bg-burgundy-900 text-white relative">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3.5 py-1.5 rounded-full inline-block mb-3">
-                    Instant Quote Engine
-                </span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Interactive Price Calculator</h2>
-                <p class="text-gray-300 text-sm mt-2">Adjust your parameters below for a live total cost estimation.</p>
-            </div>
-
-            <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="space-y-6">
-                        <div>
-                            <label class="block text-xs uppercase font-bold tracking-wider text-amber-300 mb-2">Guest Count: <span id="calc-guests-label" class="text-lg font-bold text-white ml-2">75 Guests</span></label>
-                            <input type="range" id="calc-guests" min="10" max="300" value="75" step="5" class="w-full accent-amber-500 h-2 bg-gray-700 rounded-lg cursor-pointer">
-                            <div class="flex justify-between text-xs text-gray-400 mt-1">
-                                <span>10</span>
-                                <span>150</span>
-                                <span>300+</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs uppercase font-bold tracking-wider text-amber-300 mb-2">Package Level</label>
-                            <select id="calc-package" class="w-full bg-burgundy-800 text-white border border-white/20 rounded-xl p-3 focus:outline-none focus:border-amber-400 text-sm">
-                                <option value="38">Silver Buffet ($38/person)</option>
-                                <option value="65" selected>Gold Plated ($65/person)</option>
-                                <option value="98">Platinum VIP ($98/person)</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs uppercase font-bold tracking-wider text-amber-300 mb-2">Add-On Options</label>
-                            <div class="space-y-2">
-                                <label class="flex items-center text-sm text-gray-200 cursor-pointer">
-                                    <input type="checkbox" id="addon-bar" class="accent-amber-500 w-4 h-4 rounded mr-2" value="15">
-                                    Full Open Bar Service (+$15/guest)
-                                </label>
-                                <label class="flex items-center text-sm text-gray-200 cursor-pointer">
-                                    <input type="checkbox" id="addon-dessert" class="accent-amber-500 w-4 h-4 rounded mr-2" value="8">
-                                    Live Dessert & Flambé Station (+$8/guest)
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-burgundy-800/80 rounded-2xl p-6 sm:p-8 border border-amber-400/30 text-center flex flex-col justify-center items-center">
-                        <span class="text-xs uppercase tracking-widest text-amber-300 font-bold mb-1">Estimated Total</span>
-                        <div class="text-4xl sm:text-5xl font-serif font-bold text-amber-400 my-2" id="calc-total">$4,875</div>
-                        <p class="text-xs text-gray-300 mb-6">*Includes setup, service personnel & standard tableware.</p>
-                        
-                        <button onclick="applyEstimateToForm()" class="w-full bg-amber-500 hover:bg-amber-600 text-burgundy-900 font-bold py-3 px-6 rounded-xl transition-all text-sm shadow-md">
-                            Lock In Estimate & Reserve Date
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS SECTION -->
+    <!-- TESTIMONIALS SECTION -->
     <section id="reviews" class="py-24 bg-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-amber-700 text-xs font-bold uppercase tracking-widest bg-amber-100/80 px-3.5 py-1.5 rounded-full inline-block mb-3">
-                    Testimonials
+                    Client Praise
                 </span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-burgundy-900">What Our Clients Say</h2>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-burgundy-900">Loved By Our Guests</h2>
+                <p class="text-gray-600 mt-4 text-base">Read authentic experiences from couples, corporate executives, and private hosts.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl p-8 shadow-sm border border-amber-900/10 flex flex-col justify-between">
+                <div class="bg-white p-8 rounded-3xl border border-amber-900/10 shadow-sm flex flex-col justify-between">
                     <div>
-                        <div class="flex text-amber-500 text-xs gap-1 mb-4">
+                        <div class="flex text-amber-400 gap-1 text-sm mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-gray-700 text-sm leading-relaxed italic mb-6">
-                            "Savory Delights catered our 180-guest wedding, and the filet mignon was executed perfectly. The service team was incredibly attentive."
-                        </p>
+                        <p class="text-gray-700 text-sm leading-relaxed italic mb-6">"Catering Lasinrang made our wedding reception at the botanical gardens feel straight out of a magazine. The filet mignon was cooked to absolute perfection!"</p>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                        <div class="w-10 h-10 rounded-full bg-amber-200 text-burgundy-900 font-bold flex items-center justify-center font-serif">
-                            EV
-                        </div>
+                    <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Client" class="w-10 h-10 rounded-full object-cover">
                         <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Emily & Alex Vance</h4>
-                            <p class="text-xs text-gray-500">Wedding Reception</p>
+                            <h4 class="font-bold text-burgundy-900 text-sm">Clara & Julian Sterling</h4>
+                            <span class="text-xs text-gray-500">Wedding Reception</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl p-8 shadow-sm border border-amber-900/10 flex flex-col justify-between">
+                <div class="bg-white p-8 rounded-3xl border border-amber-900/10 shadow-sm flex flex-col justify-between">
                     <div>
-                        <div class="flex text-amber-500 text-xs gap-1 mb-4">
+                        <div class="flex text-amber-400 gap-1 text-sm mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-gray-700 text-sm leading-relaxed italic mb-6">
-                            "We hired Marcus and his culinary staff for our corporate summit gala. Seamless logistics, outstanding wine pairings, and rave reviews."
-                        </p>
+                        <p class="text-gray-700 text-sm leading-relaxed italic mb-6">"Professional, punctual, and extraordinarily refined. We hired them for our annual corporate gala of 250 guests and received endless praise from our board members."</p>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                        <div class="w-10 h-10 rounded-full bg-amber-200 text-burgundy-900 font-bold flex items-center justify-center font-serif">
-                            RS
-                        </div>
+                    <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Client" class="w-10 h-10 rounded-full object-cover">
                         <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Robert Sterling</h4>
-                            <p class="text-xs text-gray-500">VP of Corporate Operations</p>
+                            <h4 class="font-bold text-burgundy-900 text-sm">Jonathan Hayes</h4>
+                            <span class="text-xs text-gray-500">Apex Global CEO</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl p-8 shadow-sm border border-amber-900/10 flex flex-col justify-between">
+                <div class="bg-white p-8 rounded-3xl border border-amber-900/10 shadow-sm flex flex-col justify-between">
                     <div>
-                        <div class="flex text-amber-500 text-xs gap-1 mb-4">
+                        <div class="flex text-amber-400 gap-1 text-sm mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-gray-700 text-sm leading-relaxed italic mb-6">
-                            "The private chef experience for our 50th anniversary dinner was extraordinary. Plating looked like fine art."
-                        </p>
+                        <p class="text-gray-700 text-sm leading-relaxed italic mb-6">"The private chef dinner for my milestone birthday was unforgettable. Every course was presented with storytelling flair and exquisite wine pairings."</p>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                        <div class="w-10 h-10 rounded-full bg-amber-200 text-burgundy-900 font-bold flex items-center justify-center font-serif">
-                            CL
-                        </div>
+                    <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="Client" class="w-10 h-10 rounded-full object-cover">
                         <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Clara Lin</h4>
-                            <p class="text-xs text-gray-500">Private Soirée Host</p>
+                            <h4 class="font-bold text-burgundy-900 text-sm">Seraphina DuPont</h4>
+                            <span class="text-xs text-gray-500">Private Milestone Dinner</span>
                         </div>
                     </div>
                 </div>
@@ -683,211 +646,185 @@
         </div>
     </section>
 
-    <!-- BOOKING FORM SECTION -->
-    <section id="book" class="py-24 bg-white border-t border-gray-200">
+    <!-- BOOKING & CONTACT SECTION -->
+    <section id="book" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                
-                <div class="lg:col-span-5 space-y-8">
-                    <div>
-                        <span class="text-amber-700 text-xs font-bold uppercase tracking-widest bg-amber-100/80 px-3.5 py-1.5 rounded-full inline-block mb-3">
-                            Reserve Your Date
-                        </span>
-                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-burgundy-900">Let's Plan Your Culinary Experience</h2>
-                        <p class="text-gray-600 mt-4 text-base leading-relaxed">
-                            Fill out the booking inquiry form to request a personalized tasting session or reserve your event date.
-                        </p>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-700 text-xs font-bold uppercase tracking-widest bg-amber-100/80 px-3.5 py-1.5 rounded-full inline-block mb-3">
+                    Reserve Your Date
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-burgundy-900">Let's Create Something Delicious</h2>
+                <p class="text-gray-600 mt-4 text-base">Fill out the inquiry form below to check availability and reserve your date with our event specialists.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info Side -->
+                <div class="lg:col-span-5 bg-cream p-8 sm:p-10 rounded-3xl border border-amber-900/10 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <h3 class="font-serif text-2xl font-bold text-burgundy-900">Get in Touch</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Ready to begin planning your extraordinary event? Reach out directly or complete our booking form.</p>
+                        
+                        <div class="space-y-4 pt-4">
+                            <div class="flex items-center gap-4 text-gray-700">
+                                <div class="w-12 h-12 rounded-2xl bg-burgundy-700 text-amber-300 flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-500 block uppercase font-bold">Call Us</span>
+                                    <span class="font-semibold text-gray-900">+62 815-8611-1653</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-700">
+                                <div class="w-12 h-12 rounded-2xl bg-burgundy-700 text-amber-300 flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-500 block uppercase font-bold">Email Inquiries</span>
+                                    <span class="font-semibold text-gray-900">concierge@cateringlasinrang.com</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-700">
+                                <div class="w-12 h-12 rounded-2xl bg-burgundy-700 text-amber-300 flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-500 block uppercase font-bold">Culinary Studio</span>
+                                    <span class="font-semibold text-gray-900">Jl. Lasinrang No. 45, Makassar</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-burgundy-700 text-amber-400 flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs uppercase font-bold text-gray-400">Direct Contact</p>
-                                <p class="font-bold text-gray-900 text-base">+1 (555) 839-2020</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-burgundy-700 text-amber-400 flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs uppercase font-bold text-gray-400">Email Desk</p>
-                                <p class="font-bold text-gray-900 text-base">events@savorydelights.com</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-burgundy-700 text-amber-400 flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs uppercase font-bold text-gray-400">Showroom & Kitchen</p>
-                                <p class="font-bold text-gray-900 text-base">450 Culinary Blvd, Suite 100</p>
-                            </div>
+                    <div class="pt-8 mt-8 border-t border-amber-900/10">
+                        <span class="text-xs font-bold uppercase tracking-wider text-burgundy-900 block mb-3">Follow Our Culinary Journey</span>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 rounded-full bg-burgundy-700 text-white flex items-center justify-center hover:bg-burgundy-800 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-burgundy-700 text-white flex items-center justify-center hover:bg-burgundy-800 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-burgundy-700 text-white flex items-center justify-center hover:bg-burgundy-800 transition-colors"><i class="fa-brands fa-pinterest-p"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Form Card -->
-                <div class="lg:col-span-7 bg-cream rounded-3xl p-8 sm:p-10 border border-amber-900/10 shadow-xl relative">
-                    <h3 class="font-serif text-2xl font-bold text-burgundy-900 mb-6">Booking Inquiry Form</h3>
-
-                    <form id="booking-form" onsubmit="submitBooking(event)" class="space-y-6">
+                <!-- Form Side -->
+                <div class="lg:col-span-7 bg-cream p-8 sm:p-10 rounded-3xl border border-amber-900/10">
+                    <form id="booking-form" class="space-y-6">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
-                                <label for="book-name" class="block text-xs uppercase font-bold text-gray-700 mb-2">Full Name *</label>
-                                <input type="text" id="book-name" required placeholder="Eleanor Vance" class="w-full bg-white border border-gray-300 rounded-xl p-3.5 text-sm focus:outline-none focus:border-amber-500">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Full Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-white border border-gray-200 px-4 py-3.5 rounded-xl outline-none focus:border-burgundy-700 text-sm">
                             </div>
                             <div>
-                                <label for="book-email" class="block text-xs uppercase font-bold text-gray-700 mb-2">Email Address *</label>
-                                <input type="email" id="book-email" required placeholder="eleanor@example.com" class="w-full bg-white border border-gray-300 rounded-xl p-3.5 text-sm focus:outline-none focus:border-amber-500">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Email Address</label>
+                                <input type="email" required placeholder="john@example.com" class="w-full bg-white border border-gray-200 px-4 py-3.5 rounded-xl outline-none focus:border-burgundy-700 text-sm">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
-                                <label for="book-phone" class="block text-xs uppercase font-bold text-gray-700 mb-2">Phone Number *</label>
-                                <input type="tel" id="book-phone" required placeholder="+1 (555) 000-0000" class="w-full bg-white border border-gray-300 rounded-xl p-3.5 text-sm focus:outline-none focus:border-amber-500">
-                            </div>
-                            <div>
-                                <label for="book-date" class="block text-xs uppercase font-bold text-gray-700 mb-2">Event Date *</label>
-                                <input type="date" id="book-date" required class="w-full bg-white border border-gray-300 rounded-xl p-3.5 text-sm focus:outline-none focus:border-amber-500">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label for="book-type" class="block text-xs uppercase font-bold text-gray-700 mb-2">Event Type</label>
-                                <select id="book-type" class="w-full bg-white border border-gray-300 rounded-xl p-3.5 text-sm focus:outline-none focus:border-amber-500">
-                                    <option value="wedding">Wedding Reception</option>
-                                    <option value="corporate">Corporate Summit / Gala</option>
-                                    <option value="private">Private Dinner / Party</option>
-                                    <option value="other">Other Special Event</option>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Event Type</label>
+                                <select class="w-full bg-white border border-gray-200 px-4 py-3.5 rounded-xl outline-none focus:border-burgundy-700 text-sm cursor-pointer">
+                                    <option>Wedding Celebration</option>
+                                    <option>Corporate Gala</option>
+                                    <option>Private Dinner Party</option>
+                                    <option>Buffet & Grazing Event</option>
                                 </select>
                             </div>
                             <div>
-                                <label for="book-guests" class="block text-xs uppercase font-bold text-gray-700 mb-2">Guest Count</label>
-                                <input type="number" id="book-guests" min="5" placeholder="75" class="w-full bg-white border border-gray-300 rounded-xl p-3.5 text-sm focus:outline-none focus:border-amber-500">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Estimated Guest Count</label>
+                                <input type="number" required placeholder="75" class="w-full bg-white border border-gray-200 px-4 py-3.5 rounded-xl outline-none focus:border-burgundy-700 text-sm">
                             </div>
                         </div>
 
                         <div>
-                            <label for="book-package" class="block text-xs uppercase font-bold text-gray-700 mb-2">Preferred Package Tier</label>
-                            <select id="book-package" class="w-full bg-white border border-gray-300 rounded-xl p-3.5 text-sm focus:outline-none focus:border-amber-500">
-                                <option value="silver">Silver Buffet ($38/person)</option>
-                                <option value="gold" selected>Gold Plated ($65/person)</option>
-                                <option value="platinum">Platinum VIP ($98/person)</option>
-                            </select>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Event Details / Special Requirements</label>
+                            <textarea rows="4" placeholder="Tell us about your venue, desired date, and any dietary preferences..." class="w-full bg-white border border-gray-200 px-4 py-3.5 rounded-xl outline-none focus:border-burgundy-700 text-sm"></textarea>
                         </div>
 
-                        <div>
-                            <label for="book-message" class="block text-xs uppercase font-bold text-gray-700 mb-2">Special Requests & Dietary Notes</label>
-                            <textarea id="book-message" rows="4" placeholder="Share any dietary preferences, venue info, or custom requests..." class="w-full bg-white border border-gray-300 rounded-xl p-3.5 text-sm focus:outline-none focus:border-amber-500"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full bg-burgundy-700 hover:bg-burgundy-800 text-white font-bold py-4 rounded-xl shadow-lg transition-all text-base">
-                            Submit Inquiry <i class="fa-solid fa-paper-plane ml-2"></i>
+                        <button type="submit" class="w-full bg-burgundy-700 hover:bg-burgundy-800 text-white font-bold py-4 rounded-xl text-sm transition-all shadow-lg shadow-burgundy-900/15">
+                            Submit Inquiry & Check Availability
                         </button>
                     </form>
-
-                    <!-- Submission Modal Notification -->
-                    <div id="success-overlay" class="hidden absolute inset-0 bg-cream/95 backdrop-blur-sm rounded-3xl p-8 flex flex-col items-center justify-center text-center z-20">
-                        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-3xl mb-4">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <h3 class="font-serif text-3xl font-bold text-burgundy-900 mb-2">Inquiry Submitted</h3>
-                        <p class="text-gray-600 text-sm max-w-md mb-6">
-                            Thank you! Your event inquiry has been received. Our event coordinator will respond within 24 business hours.
-                        </p>
-                        <button onclick="dismissSuccess()" class="bg-burgundy-700 text-white text-xs uppercase font-bold px-6 py-3 rounded-full">
-                            Close Confirmation
-                        </button>
-                    </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-burgundy-900 text-white pt-16 pb-8 border-t border-burgundy-800 mt-auto">
+    <footer class="bg-burgundy-900 text-gray-300 py-16 border-t border-burgundy-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-burgundy-800/60">
-                <div class="md:col-span-4 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center text-burgundy-900 font-serif font-bold text-lg">
-                            S
-                        </div>
-                        <span class="font-serif text-2xl font-bold tracking-tight text-white">Catering<span class="text-amber-400">Lasinrang</span></span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="Logo.jpg" alt="Logo" style="height: 38px; width: 38px; object-fit: cover; border-radius: 6px;">
+                        <span class="font-atsanee text-white text-lg font-bold tracking-wider">CATERING LASINRANG</span>
                     </div>
-                    <p class="text-gray-300 text-xs leading-relaxed">
-                        Exquisite culinary craftsmanship and full-service event design for weddings, corporate summits, and private dining.
-                    </p>
-                    <div class="flex gap-3 text-amber-400 text-sm pt-2">
-                        <a href="#" class="w-8 h-8 rounded-full bg-burgundy-800 flex items-center justify-center hover:bg-amber-500 hover:text-burgundy-900 transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-burgundy-800 flex items-center justify-center hover:bg-amber-500 hover:text-burgundy-900 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-burgundy-800 flex items-center justify-center hover:bg-amber-500 hover:text-burgundy-900 transition-colors"><i class="fa-brands fa-pinterest-p"></i></a>
-                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">Elevating events across the region with premier culinary excellence, tailored menus, and white-glove hospitality.</p>
                 </div>
-
-                <div class="md:col-span-3 space-y-3">
-                    <h4 class="text-xs uppercase tracking-widest text-amber-400 font-bold">Quick Links</h4>
-                    <ul class="space-y-2 text-xs text-gray-300 font-medium">
-                        <li><a href="#about" class="hover:text-amber-400">About Us</a></li>
-                        <li><a href="#services" class="hover:text-amber-400">Services</a></li>
-                        <li><a href="#menu" class="hover:text-amber-400">Menus</a></li>
-                        <li><a href="#calculator" class="hover:text-amber-400">Cost Estimator</a></li>
+                <div>
+                    <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition-colors">Our Services</a></li>
+                        <li><a href="#menu" class="hover:text-amber-400 transition-colors">Culinary Menus</a></li>
+                        <li><a href="#packages" class="hover:text-amber-400 transition-colors">Pricing Packages</a></li>
                     </ul>
                 </div>
-
-                <div class="md:col-span-5 space-y-3">
-                    <h4 class="text-xs uppercase tracking-widest text-amber-400 font-bold">Catering Kitchen & Office</h4>
-                    <p class="text-xs text-gray-300">450 Culinary Boulevard, Suite 100, Gourmet District</p>
-                    <p class="text-xs text-gray-300"><span class="text-amber-400">Hours:</span> Mon-Sat 8:00 AM - 7:00 PM</p>
-                    <p class="text-xs text-gray-300"><span class="text-amber-400">Phone:</span> +1 (555) 839-2020</p>
+                <div>
+                    <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-4">Services</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#services" class="hover:text-amber-400 transition-colors">Wedding Catering</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition-colors">Corporate Summits</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition-colors">Private Chef Dinners</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition-colors">Grazing Buffets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-4">Newsletter</h4>
+                    <p class="text-xs text-gray-400 mb-4">Subscribe to receive seasonal tasting menus and event styling tips.</p>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Your email" class="bg-burgundy-800 border border-burgundy-700 text-white px-3.5 py-2.5 rounded-xl text-xs outline-none focus:border-amber-400 w-full">
+                        <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-burgundy-900 font-bold px-4 rounded-xl text-xs transition-colors"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-
-            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-400 gap-4">
-                <p>&copy; 2026 Savory Delights Catering LLC. All Rights Reserved.</p>
+            <div class="border-t border-burgundy-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400 gap-4">
+                <p>&copy; 2026 Catering Lasinrang. All Rights Reserved.</p>
                 <div class="flex gap-6">
-                    <a href="#" class="hover:underline">Privacy Policy</a>
-                    <a href="#" class="hover:underline">Terms of Service</a>
+                    <a href="#" class="hover:text-amber-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-amber-400 transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JavaScript for Interactivity -->
     <script>
-        // Mobile menu controls
+        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
 
-        // Menu Tab Filtering
-        const tabBtns = document.querySelectorAll('.menu-tab-btn');
+        // Menu filter script
+        const filterBtns = document.querySelectorAll('.menu-tab-btn');
         const menuItems = document.querySelectorAll('.menu-item');
 
-        tabBtns.forEach(btn => {
+        filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                tabBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-burgundy-700', 'text-white');
-                    b.classList.add('bg-white', 'text-gray-700');
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-burgundy-700', 'text-white', 'shadow-md');
+                    b.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-200');
                 });
-                btn.classList.add('active', 'bg-burgundy-700', 'text-white');
-                btn.classList.remove('bg-white', 'text-gray-700');
+                btn.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+                btn.classList.add('active', 'bg-burgundy-700', 'text-white', 'shadow-md');
 
                 const filter = btn.getAttribute('data-filter');
                 menuItems.forEach(item => {
@@ -900,52 +837,55 @@
             });
         });
 
-        // Price Calculator Engine
-        const calcGuests = document.getElementById('calc-guests');
-        const calcPackage = document.getElementById('calc-package');
-        const addonBar = document.getElementById('addon-bar');
-        const addonDessert = document.getElementById('addon-dessert');
-        const calcGuestsLabel = document.getElementById('calc-guests-label');
-        const calcTotal = document.getElementById('calc-total');
+        // Interactive Cost Estimator script
+        const guestSlider = document.getElementById('guestSlider');
+        const guestCountText = document.getElementById('guestCountText');
+        const packageSelect = document.getElementById('packageSelect');
+        const barService = document.getElementById('barService');
+        const dessertStation = document.getElementById('dessertStation');
+        const totalPriceDisplay = document.getElementById('totalPriceDisplay');
 
-        function updatePriceEstimate() {
-            const guests = parseInt(calcGuests.value);
-            const basePrice = parseInt(calcPackage.value);
-            let addonPrice = 0;
-
-            if (addonBar.checked) addonPrice += parseInt(addonBar.value);
-            if (addonDessert.checked) addonPrice += parseInt(addonDessert.value);
-
-            const total = guests * (basePrice + addonPrice);
-            calcGuestsLabel.textContent = `${guests} Guests`;
-            calcTotal.textContent = `$${total.toLocaleString()}`;
+        function updateSliderBackground() {
+            const min = guestSlider.min;
+            const max = guestSlider.max;
+            const val = guestSlider.value;
+            const percentage = ((val - min) / (max - min)) * 100;
+            guestSlider.style.background = `linear-gradient(to right, #f59e0b 0%, #f59e0b ${percentage}%, #4a2328 ${percentage}%, #4a2328 100%)`;
         }
 
-        calcGuests.addEventListener('input', updatePriceEstimate);
-        calcPackage.addEventListener('change', updatePriceEstimate);
-        addonBar.addEventListener('change', updatePriceEstimate);
-        addonDessert.addEventListener('change', updatePriceEstimate);
+        function calculateCost() {
+            const guests = parseInt(guestSlider.value, 10);
+            const packagePrice = parseFloat(packageSelect.value);
+            
+            let perGuestAddOns = 0;
+            if (barService.checked) perGuestAddOns += parseFloat(barService.value);
+            if (dessertStation.checked) perGuestAddOns += parseFloat(dessertStation.value);
 
-        function applyEstimateToForm() {
-            document.getElementById('book-guests').value = calcGuests.value;
-            const packageSelect = document.getElementById('book-package');
-            const val = calcPackage.value;
-            if (val === "38") packageSelect.value = "silver";
-            if (val === "65") packageSelect.value = "gold";
-            if (val === "98") packageSelect.value = "platinum";
+            const costPerGuest = packagePrice + perGuestAddOns;
+            const total = guests * costPerGuest;
 
-            document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+            guestCountText.textContent = `${guests} Guests`;
+            totalPriceDisplay.textContent = `$${total.toLocaleString('en-US')}`;
+
+            updateSliderBackground();
         }
 
-        // Form submission handling
-        function submitBooking(event) {
-            event.preventDefault();
-            document.getElementById('success-overlay').classList.remove('hidden');
+        if (guestSlider) {
+            guestSlider.addEventListener('input', calculateCost);
+            packageSelect.addEventListener('change', calculateCost);
+            barService.addEventListener('change', calculateCost);
+            dessertStation.addEventListener('change', calculateCost);
+            calculateCost();
         }
 
-        function dismissSuccess() {
-            document.getElementById('booking-form').reset();
-            document.getElementById('success-overlay').classList.add('hidden');
+        // Booking form submission alert
+        const bookingForm = document.getElementById('booking-form');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you! Your inquiry has been submitted successfully. Our event concierge will contact you shortly.');
+                bookingForm.reset();
+            });
         }
     </script>
 </body>
