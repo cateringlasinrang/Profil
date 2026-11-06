@@ -42,21 +42,12 @@
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        atsanee: ['"Atsanee"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Mendaftarkan font .otf lokal Anda */
-        @font-face {
-            font-family: 'Atsanee';
-            src: url('AtsaneeDEMO.otf') format('opentype'), url('atsanee.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #FAF7F2;
@@ -64,9 +55,6 @@
         }
         .font-serif {
             font-family: 'Playfair Display', serif;
-        }
-        .font-atsanee {
-            font-family: 'Atsanee', sans-serif;
         }
         .hero-overlay {
             background: linear-gradient(180deg, rgba(20, 15, 12, 0.82) 0%, rgba(20, 15, 12, 0.65) 50%, rgba(20, 15, 12, 0.9) 100%);
@@ -92,13 +80,9 @@
     <!-- NAVIGATION HEADER -->
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-amber-900/10 transition-all duration-300" id="main-header">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo (Kotak + Font Atsanee) -->
-            <a href="#" class="logo-brand" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-                <img src="logo.png" alt="Catering Lasinrang" style="height: 45px; width: 45px; object-fit: cover; border-radius: 6px;">
-                <div style="display: flex; flex-direction: column; line-height: 1.1;">
-                    <span class="font-atsanee" style="font-size: 1rem; font-weight: bold; color: #1a1a1a; letter-spacing: 0.5px;">CATERING</span>
-                    <span class="font-atsanee" style="font-size: 1.2rem; font-weight: bold; color: #c82333; letter-spacing: 0.5px;">LASINRANG</span>
-                </div>
+            <!-- Brand Logo (Menggunakan Gambar Utuh Tanpa Script Font) -->
+            <a href="#" class="logo-brand flex items-center gap-3 text-decoration-none">
+                <img src="logo.png" alt="Catering Lasinrang" class="h-12 w-auto object-contain rounded-lg shadow-sm">
             </a>
 
             <!-- Desktop Nav Links -->
@@ -755,8 +739,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="Logo.jpg" alt="Logo" style="height: 38px; width: 38px; object-fit: cover; border-radius: 6px;">
-                        <span class="font-atsanee text-white text-lg font-bold tracking-wider">CATERING LASINRANG</span>
+                        <img src="Logo.jpg" alt="Logo" class="h-10 w-auto object-contain rounded-lg">
                     </div>
                     <p class="text-sm text-gray-400 leading-relaxed">Elevating events across the region with premier culinary excellence, tailored menus, and white-glove hospitality.</p>
                 </div>
